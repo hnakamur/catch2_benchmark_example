@@ -14,9 +14,7 @@ include(catch2)
 file(GLOB TEST_SOURCES ${CMAKE_SOURCE_DIR}/tests/*.cc)
 
 add_executable(${PROJECT_NAME} ${TEST_SOURCES})
-target_compile_definitions(${PROJECT_NAME} PRIVATE CATCH_CONFIG_ENABLE_BENCHMARKING)
-target_include_directories(${PROJECT_NAME} PRIVATE ${catch2_INCLUDE_DIR})
-target_link_libraries(${PROJECT_NAME} Catch2::Catch2)
+target_link_libraries(${PROJECT_NAME} Catch2::Catch2WithMain)
 
 catch_discover_tests(${PROJECT_NAME})
 
